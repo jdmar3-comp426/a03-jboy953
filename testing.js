@@ -18,4 +18,10 @@ let obj2 = {
 }
 console.log(removeKeyNonDestructive(obj2, obj2.password));
 console.log("bookmark2");
-//console.log(removeKeys());
+let obj3 = {
+    name: 'Mr. Boss',
+    title: 'boss',
+    age: 33,
+    password: 'pass123'
+}
+console.log(removeKeys(obj3, ['password', 'age']));
