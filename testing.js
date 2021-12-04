@@ -1,4 +1,4 @@
-import { identifyVariable, identifyArray, removeKey, removeKeyNonDestructive, removeKeys } from "./src/mild/mild_2.js";
+import removeKeys, { identifyVariable, identifyArray, removeKey, removeKeyNonDestructive } from "./src/mild/mild_2.js";
 console.log(identifyVariable(4));
 console.log(identifyArray(['some', 3, [3, 4], false]));
 let obj = {
@@ -16,8 +16,9 @@ let obj2 = {
     age: 33,
     password: 'pass123'
 }
-console.log(removeKeyNonDestructive(obj2, obj2.password));
+let bob = removeKeyNonDestructive(obj2, obj2.age);
 console.log("bookmark2");
+console.log();
 let obj3 = {
     name: 'Mr. Boss',
     title: 'boss',
