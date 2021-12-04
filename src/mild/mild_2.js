@@ -73,8 +73,9 @@ export function removeKey(object, key) {
  If only `removeKeyNonDestructive` was called, nothing would have changed.
  */
 export function removeKeyNonDestructive(object, key) {
-   removeKey(object, key) = x;
-   return x;
+   let newob = { ...object};
+   removeKey(newob, key);
+   return newob;
 }
 
 /**
@@ -98,9 +99,10 @@ export function removeKeyNonDestructive(object, key) {
 
  * @return {*} The object with its keys removed.
  */
-export default function removeKeys(object, keyList) {
+export  function removeKeys(object, keyList) {
+   let newob = { ...object};
    keyList.forEach(element => {
-      removeKey(object, element);
+      removeKey(newob, element);
    });
-   return object;
+   return newob;
 }
