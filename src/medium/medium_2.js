@@ -66,7 +66,6 @@ export function ratioHybrids(mpg_data){
 }
 
 export const allCarStats = {
-    test: mpg_data[0].city_mpg,
     avgMpg: avgMpg(mpg_data),
     allYearStats: allYearStats(mpg_data),
     ratioHybrids: ratioHybrids(mpg_data),
