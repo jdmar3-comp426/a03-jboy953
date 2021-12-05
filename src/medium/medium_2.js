@@ -13,16 +13,59 @@ see under the methods section
  *
  *
  * @param {allCarStats.avgMpg} Average miles per gallon on the highway and in the city. keys `city` and `highway`
- *
- * @param {allCarStats.allYearStats} The result of calling `getStatistics` from medium_1.js on
+ */
+export function avgMpg(data){
+    let i;
+    let hw;
+    let city;
+    for(i=0; i<data.length; i++){
+        let x = Object.entries(data[i]).values;
+        hw += x[6];
+        city += x[0];
+    }
+    return{
+        city: city,
+        highway: hw
+    }
+} 
+ /**
+ *  @param {allCarStats.allYearStats} The result of calling `getStatistics` from medium_1.js on
  * the years the cars were made.
- *
+ */
+export function allYearStats(data){
+    let i;
+    let j = [];
+    for(i=0; i<data.length; i++){
+        let x = Object.entries(data[i]).values;
+        j.push(x[x.length - 1]);
+    }
+    return getStatistics(j);
+}
+/**
  * @param {allCarStats.ratioHybrids} ratio of cars that are hybrids
  */
+export function ratioHybrids(data){
+    let i;
+    let j = [];
+    for(i=0; i<data.length; i++){
+        let x = Object.entries(data[i]).values;
+        j.push(x[9]);
+    }
+    let t, f;
+    for(i=0; i<j.length; i++){
+        if(j[i]==true){
+            t++;
+        } else{
+            f++;
+        }
+    }
+    return (t/(t+f));
+}
+
 export const allCarStats = {
-    avgMpg: undefined,
-    allYearStats: undefined,
-    ratioHybrids: undefined,
+    avgMpg: avgMpg(mpg_data),
+    allYearStats: allYearStats(mpg_data),
+    ratioHybrids: ratioHybrids(mpg_data),
 };
 
 
