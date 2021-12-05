@@ -1,6 +1,8 @@
-import {getMedian, getStatistics } from "./src/medium/medium_1.js";
-let array = [3,2,5,6,2,7,4,2,7,5];
-console.log(getMedian(array));
+// import mpg_data from "./src/medium/data/mpg_data.js";
+import {allCarStats, avgMpg, allYearStats, ratioHybrids } from "./src/medium/medium_2.js";
+import mpg_data from "./src/medium/data/mpg_data.js";
+
+console.log(allCarStats);
 console.log("bookmark1");
+console.log();
 console.log("bookmark2");
-console.log(getStatistics([3,2,4,5,5,5,2,6,7]));
